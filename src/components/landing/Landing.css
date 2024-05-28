@@ -1,0 +1,52 @@
+.landing {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.landing__header {
+    font-size: 5vw;
+    text-align: center;
+    margin-top: 10%;
+}
+
+.landing__links {
+    display: flex;
+    column-gap: 10vw;
+    justify-self: center;
+    margin-top: 5%;
+    font-size: 2vw;
+}
+
+.landing__link {
+    background-color: var(--text-color);
+    color: var(--color-bg-100);
+    padding: 1rem 3rem;
+    border-radius: 1rem;
+}
+
+.landing__link:hover {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* ================== Breakpoints ================== */
+/* Medium */
+@media screen and (max-width: 768px) {
+    .landing__header {
+        margin-top: 20%;
+    }
+
+    .landing__links {
+        column-gap: 5vw;
+        margin-top: 3rem;
+        font-size: 4vw;
+    }
+}
+
+/* Small */
+@media screen and (max-width: 350px) {
+    .landing__link {
+        padding: 1rem 1.5rem;
+        border-radius: 1rem;
+    }
+}

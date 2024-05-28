@@ -1,0 +1,104 @@
+.auth {
+    display: grid;
+    grid-template-columns: 25%;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+.auth__back {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    display: flex;
+    column-gap: .5rem;
+    align-items: center;
+}
+
+.auth__back:hover {
+    transform: translate(-6px, 0);
+}
+
+.auth__box {
+    background-color: var(--color-bg-000);
+    padding: 2rem 3rem;
+    border-radius: 2rem;
+    position: relative;
+}
+
+.signup__form {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.signup_field {
+    margin-bottom: .5rem;
+}
+
+.auth__submit {
+    position: relative;
+}
+
+.auth__errmsg {
+    display: inline-block;
+    position: absolute;
+    color: firebrick;
+}
+
+.auth__button {
+    width: 100%;
+    background-color: var(--color-bg-400);
+    height: 3.5rem;
+    border-radius: 5px;
+    margin-top: 2.5rem;
+    font-size: 1.25rem;
+}
+
+.auth__button:hover {
+    background-color: var(--color-bg-100);
+}
+
+.signin__persist {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    margin-top: 1rem;
+}
+
+.signin__checkbox {
+    width: 20px;
+    height: 20px;
+  }
+
+/* ================== Breakpoints ================== */
+/* LLarge */
+@media screen and (max-width: 1440px) {
+    .auth {
+        grid-template-columns: 40%;
+    }
+}
+
+/* Large */
+@media screen and (max-width: 992px) {
+    .auth {
+        grid-template-columns: 60%;
+    }
+}
+
+/* Medium */
+@media screen and (max-width: 768px) {
+    .auth {
+        grid-template-columns: 70%;
+        margin-top: 20%;
+    }
+
+    .auth__box {
+        padding: 1rem 1.5rem;
+    }
+}
+
+/* Small */
+@media screen and (max-width: 350px) {
+    .auth {
+        grid-template-columns: 90%;
+        margin-top: 30%;
+    }
+}

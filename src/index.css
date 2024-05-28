@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* VARIABLES */
+:root {
+  /** CSS DARK THEME PRIMARY COLORS */
+  --color-primary-100: #d4b5b5;
+  --color-primary-200: #b79c9c;
+  --color-primary-300: #9a8484;
+  --color-primary-400: #7f6d6d;
+  --color-primary-500: #645757;
+  /** CSS DARK THEME MIXED SURFACE COLORS */
+  --color-bg-000: white;
+  --color-bg-100: #fefaf9;
+  --color-bg-200: #fcf4f4;
+  --color-bg-300: #fbefee;
+  --color-bg-400: #fae9e9;
+  --color-bg-500: #f8e4e4;
+
+  --text-color: #4b4141;
+
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+
+  --header-height: 6rem;
+
+  @media screen and (max-width: 768px) {
+    --header-height: 4rem;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: var(--font-normal);
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--color-bg-100);
+  color: var(--text-color);
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: var(--text-color);
+}
+
+button {
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.icon-button {
+  width: 48px;
+  height: 48px;
+  background-color: transparent;
+  border: none;
+  color: var(--text-color);
+  display: grid;
+  place-content: center;
+}
+
+.loading-status {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ================== Breakpoints ================== */
+/* LLarge */
+@media screen and (max-width: 1440px) {}
+
+/* Large */
+@media screen and (max-width: 992px) {
+  .loading-status {
+    font-size: 1.5rem;
+  }
+
+}
+
+/* Medium */
+@media screen and (max-width: 768px) {}
+
+/* Small */
+@media screen and (max-width: 350px) {}

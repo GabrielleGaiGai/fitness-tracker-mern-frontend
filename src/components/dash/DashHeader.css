@@ -1,0 +1,59 @@
+/*********************** Dashboard Header ***********************/
+.dash__header {
+    place-items: center;
+    position: relative;
+    background-color: var(--color-bg-000);
+    box-shadow: 0 2px 8px 2px var(--color-bg-400);
+    height: var(--header-height);
+}
+
+.dash__links {
+    height: 100%;
+    display: inline-flex;
+    width: 100%;
+    align-self: center;
+    justify-content: center;
+    place-items: center;
+    font-size: 1.5rem;
+    column-gap: 3rem;
+}
+
+.dash__link {
+    display: grid;
+    grid-template-columns: 1fr;
+    box-sizing: border-box;
+}
+
+.dash__logout {
+    font-size: 1.5rem;
+    position: absolute;
+    right: 3rem;
+    top: 2rem;
+    background-color: var(--color-bg-000);
+}
+
+.dash__link:hover {
+    color: var(--color-primary-100)
+}
+
+.dash__logout:hover {
+    transform: translateX(10px) scale(1.1)
+}
+
+/* ================== Breakpoints ================== */
+
+/* Medium */
+@media screen and (max-width: 768px) {
+    .dash__logout {
+        top: 1.5rem;
+        font-size: 1rem;
+    }
+
+    .dash__links {
+        column-gap: 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* Small */
+@media screen and (max-width: 350px) {}

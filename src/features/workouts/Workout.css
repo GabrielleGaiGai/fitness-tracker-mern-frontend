@@ -1,0 +1,271 @@
+/*********************** Workout List ***********************/
+.workout {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    margin: 0 2rem;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
+
+.workout__leftpanel {
+    margin-top: 11rem;
+    display: grid;
+    grid-template-columns: 70%;
+    justify-content: center;
+    justify-items: center;
+}
+
+.workout_chart_title {
+    margin: 3rem 0 1rem;
+}
+
+.workout__card {
+    display: flex;
+    background-color: var(--color-bg-000);
+    box-shadow: 2px 2px 6px 2px var(--color-bg-400);
+    border-radius: 8px;
+    place-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.workout__list {
+    margin: 3rem 6rem 0 0;
+}
+
+.workout__header {
+    display: flex;
+    column-gap: 1rem;
+    width: 100%;
+    justify-content: center;
+    place-items: center;
+}
+
+.workout__new:hover {
+    transform: scale(1.1);
+}
+
+.workout__panel {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3rem;
+    row-gap: 2rem;
+}
+
+.workout__board {
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    box-shadow: 2px 2px 6px 2px var(--color-bg-200);
+    background-color: var(--color-bg-000);
+}
+
+.workout__head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.workout__title {
+    font-size: 1.75rem;
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+    margin-left: -.5rem;
+}
+
+.workout__edit {
+    background-color: var(--color-bg-000);
+    font-size: 1.25rem;
+}
+
+.workout__edit:hover {
+    color: var(--color-primary-100);
+}
+
+.workout__count {
+    display: flex;
+    align-items: center;
+    margin-top: .75rem;
+    column-gap: .5rem;
+}
+
+.workout__infos {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    column-gap: 2rem;
+}
+
+.workout__info {
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+}
+
+
+/*********************** Workout Page ***********************/
+.workoutpage {
+    display: grid;
+    grid-template-columns: 30%;
+    justify-content: center;
+}
+
+.workoutpage__form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3rem;
+    row-gap: 2rem;
+    margin: 2rem 0;
+}
+
+.workoutpage__title {
+    grid-column-end: span 2;
+}
+
+.workoutpage__input {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+}
+
+.workoutpage__note {
+    grid-column-end: span 2;
+}
+
+.workoutpage__buttons {
+    grid-column-end: span 3;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 3rem;
+}
+
+.workoutpage__button {
+    border-radius: 8px;
+    background-color: var(--color-primary-100);
+    height: 4em;
+    width: 100%;
+}
+
+.workoutpage__button:hover {
+    background-color: var(--color-bg-400);
+}
+
+.workoutpage__button:disabled {
+    background-color: var(--color-bg-400);
+}
+
+/* ================== Breakpoints ================== */
+/* LLarge */
+@media screen and (max-width: 1440px) {
+    .workout__leftpanel {
+        grid-template-columns: 90%;
+    }
+
+    .workout__list {
+        margin: 3rem 1rem 0;
+    }
+
+    .workout__panel {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .workout__board {
+        padding: .75rem 1.5rem;
+    }
+
+    .workoutpage {
+        grid-template-columns: 28rem;
+    }
+}
+
+/* Large */
+@media screen and (max-width: 992px) {
+    .workout {
+        grid-template-columns: 17rem 1fr;
+        margin: 0 1rem;
+    }
+
+    .workout__board {
+        padding: .5rem 1rem;
+    }
+
+    .workout__title {
+        font-size: 1.25rem;
+    }
+
+    .workout__count {
+        font-size: .85rem;
+    }
+
+    .workout__info {
+        font-size: .85rem;
+    }
+
+    .workout__header {
+        font-size: 1.5rem;
+    }
+}
+
+/* Medium */
+@media screen and (max-width: 768px) {
+    .workout {
+        grid-template-columns: 15rem 1fr;
+        margin: 0;
+    }
+
+    .workout__leftpanel {
+        height: fit-content;
+    }
+
+    .workout__panel {
+        grid-template-columns: 1fr;
+    }
+
+    .workout__card {
+        height: fit-content;
+    }
+
+    .workout_chart_title {
+        font-size: 1.25rem;
+    }
+
+    .workout__list {
+        margin: 3rem .75rem 0 0;
+    }
+
+    .workoutpage {
+        grid-template-columns: 90%;
+    }
+}
+
+/* Small */
+@media screen and (max-width: 450px) {
+    .workout {
+        grid-template-columns: 90%;
+    }
+
+    .workout__list {
+        order: 1;
+    }
+
+    .workout__leftpanel {
+        order: 2;
+        margin-top: 1rem;
+    }
+
+    .workoutpage__form {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 1rem;
+        row-gap: .75rem;
+    }
+
+    .workoutpage__title {
+        grid-column-end: span 2;
+    }
+
+    .workoutpage__buttons {
+        grid-column-end: span 2;
+        column-gap: 1rem;
+    }
+
+}
