@@ -81,7 +81,7 @@ const SignIn = () => {
             <p className='auth__errmsg' aria-live="assertive">{errMsg}</p>
             <button className="auth__button" onClick={handleSubmit}>Sign In</button>
             <label htmlFor="persist" className="signin__persist">
-              <input type="checkbox" className="signin__checkbox" id="persist" onChange={() => setPersist(prev => !prev)} checked={persist} />
+              <input type="checkbox" className="signin__checkbox" id="persist" onChange={(e) => setPersist(e.target.checked)} checked={persist} />
               Remember Me
             </label>
           </div>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { useSelector } from "react-redux"
-import { useNavigate, useParams, Link } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 
 import { useAddNewWorkoutMutation, useUpdateWorkoutMutation, useDeleteWorkoutMutation, selectWorkoutById } from "../../app/api/workoutsApiSlice"
 
@@ -13,8 +13,6 @@ import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import CheckIcon from '@mui/icons-material/Check';
 import ToggleButton from '@mui/material/ToggleButton';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons/faArrowLeftLong"
 import dayjs from "dayjs";
 
 const WorkoutPage = () => {

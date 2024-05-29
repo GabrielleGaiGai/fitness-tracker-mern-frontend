@@ -3,9 +3,10 @@ import { jwtDecode } from "jwt-decode";
 import { setCredentials } from '../authSlice'
 
 const baseQuery = fetchBaseQuery({
-  // baseUrl: 'http://localhost:3500',
-  baseUrl: 'https://fitness-tracker-mern-35vj.onrender.com',
+  baseUrl: 'http://localhost:8080',
+  // baseUrl: 'https://fitness-tracker-mern-35vj.onrender.com',
   credentials: 'include',
+  
   prepareHeaders: (headers, { getState }) => {
     const token = getState().auth.token
     if (token) {
