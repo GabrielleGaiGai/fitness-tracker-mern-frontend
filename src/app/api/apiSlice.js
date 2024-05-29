@@ -1,21 +1,39 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { jwtDecode } from "jwt-decode";
 import { setCredentials } from '../authSlice'
+import AWS from 'aws-sdk';
 
-const baseQuery = fetchBaseQuery({
-  baseUrl: 'http://localhost:8080',
-  // baseUrl: 'https://fitness-tracker-mern-35vj.onrender.com',
-  credentials: 'include',
-  
-  prepareHeaders: (headers, { getState }) => {
-    const token = getState().auth.token
-    if (token) {
-      headers.set("authorization", `Bearer ${token}`)
-    }
-    return headers
+const ssm = new AWS.SSM({ region: 'us-east-2' })
+const getParameter = async (name) => {
+  const params = {
+    Name: name,
+    WithDecryption: true
+  };
+
+  try {
+    const result = await ssm.getParameter(params).promise();
+    return result.Parameter.Value;;
+  } catch (err) {
+    console.log(err);
   }
-})
+}
 
+const baseQuery = () => {
+  const baseUrl = getParameter("baseUrl")
+  console.log(baseUrl)
+  return fetchBaseQuery({
+    baseUrl: baseUrl,
+    credentials: 'include',
+
+    prepareHeaders: (headers, { getState }) => {
+      const token = getState().auth.token
+      if (token) {
+        headers.set("authorization", `Bearer ${token}`)
+      }
+      return headers
+    }
+  })
+}
 
 const baseQueryWithReauth = async (args, api, extraOptions) => {
   let result = await baseQuery(args, api, extraOptions)
