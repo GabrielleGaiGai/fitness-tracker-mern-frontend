@@ -19,10 +19,8 @@ const getParameter = async (name) => {
 }
 
 const baseQuery = () => {
-  const baseUrl = getParameter("baseUrl")
-  console.log(baseUrl)
   return fetchBaseQuery({
-    baseUrl: baseUrl,
+    baseUrl: process.env.baseUrl,
     credentials: 'include',
 
     prepareHeaders: (headers, { getState }) => {

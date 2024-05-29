@@ -1,6 +1,9 @@
 # Stage 1: Build the Node.js application
 FROM node:alpine3.19 as build
 
+ARG baseUrl
+ENV baseUrl=$baseUrl
+
 WORKDIR /app
 COPY package.json ./
 RUN npm install
