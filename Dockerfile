@@ -1,5 +1,5 @@
 # Stage 1: Build the Node.js application
-FROM node:alpine3.19
+FROM node:alpine3.19 as build
 
 WORKDIR /app
 COPY package.json ./
